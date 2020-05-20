@@ -26,7 +26,7 @@
 
         <div class="header-right">
             <div class="header-user-con">
-            <el-dropdown class="user-name" v-show="showCompany">
+            <el-dropdown class="user-name" v-show="this.$store.state.showCompany">
                     <span class="el-dropdown-link">
                         北江股份有限公司
                     </span>
@@ -100,8 +100,7 @@
                     {title:'人资管理系统',path:'/HrManagement'},
                     {title:'财务系统',redirect:'http://120.78.186.60:8080/caiwu/login'}
                 ],
-                navIndex: -1,
-                showCompany: false 
+                navIndex: -1
             };
         },
 
@@ -111,8 +110,8 @@
                 bus.$emit('collapse', this.collapse);
                 this.showSublist = !this.showSublist;
             },
-            clickme() {
-                this.showCompany = !this.showCompany
+            clickme(){
+                this.$store.dispatch("showCompanyName")
             },
             userLogout() {
                 this.$token.deleteToken();

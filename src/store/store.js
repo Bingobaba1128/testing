@@ -7,7 +7,8 @@ const store = new Vuex.Store ({
 
   state: {
     user: '',
-    company: ''
+    company: '',
+    showCompany:false
   },
 
   getters: {
@@ -22,6 +23,9 @@ const store = new Vuex.Store ({
       state.user.authorities.map( (item,index) => {
         window.console.log(item,index)
       })      
+    },
+    showComp(state){
+      state.showCompany = true
     } 
   },
 
@@ -31,7 +35,11 @@ const store = new Vuex.Store ({
     },
     getCompanyList(context){
       context.commit("getCompany")
-    }
+    },
+    showCompanyName(context) {
+      context.commit("showComp")
+      window.console.log('ooppppp')
+    },
   }
 
 
