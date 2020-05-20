@@ -26,10 +26,16 @@
 
         <div class="header-right">
             <div class="header-user-con">
-                <div class="user-avator">
+            <el-dropdown class="user-name" v-show="showCompany">
+                    <span class="el-dropdown-link">
+                        北江股份有限公司
+                    </span>
+                </el-dropdown>
+                            <div class="user-avator">
                     <div class="el-icon-s-custom"></div>
                 </div>
 
+                
 
                 <el-dropdown class="user-name">
                     <span class="el-dropdown-link">
@@ -45,7 +51,6 @@
                             <el-dropdown-item v-for="(company,index) in companyList" :key="index" :command="company" >
                                 <span style="display:block;" @click="clickme">{{company.name}}</span>
                             </el-dropdown-item>
-
                         </el-dropdown-menu>
                     </span>
                 </el-dropdown>
@@ -78,9 +83,11 @@
                 name: 'Admin',
                 showSublist: false,
                 companyList: [
-                    {name: '公司A',ID: '110'},
-                    {name: '公司B',ID: '111'},
-                    {name: '公司C',ID: '112'},
+                    {name: '北江股份',ID: '110'},
+                    {name: '北纺科技',ID: '111'},
+                    {name: '越南北江',ID: '112'},
+                    {name: '北纺进出口',ID: '113'},
+                    {name: '香港北江',ID: '114'},
                 ],
                 user: {
                     id:'',
@@ -93,7 +100,8 @@
                     {title:'人资管理系统',path:'/HrManagement'},
                     {title:'财务系统',redirect:'http://120.78.186.60:8080/caiwu/login'}
                 ],
-                navIndex: -1 
+                navIndex: -1,
+                showCompany: false 
             };
         },
 
@@ -104,7 +112,7 @@
                 this.showSublist = !this.showSublist;
             },
             clickme() {
-                window.console.log('ooop!!')
+                this.showCompany = !this.showCompany
             },
             userLogout() {
                 this.$token.deleteToken();

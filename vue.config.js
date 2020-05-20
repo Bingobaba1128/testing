@@ -51,6 +51,8 @@
 module.exports = {
   devServer: {
     host: "127.0.0.1",
+    port: 8080,
+
   //     proxy: {
   //       '/api': {
   //           target:'http://120.78.186.60:8087', // 你请求的第三方接口

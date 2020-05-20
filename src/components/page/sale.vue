@@ -1,7 +1,7 @@
 <template>
     <div>
     <v-head></v-head>
-    <iframe src="static/iframe/index.html" class="pc iframe" scrolling="auto" >
+    <iframe src="static/dist/index.html" class="pc iframe" scrolling="auto" >
     </iframe>
     </div>
 </template>

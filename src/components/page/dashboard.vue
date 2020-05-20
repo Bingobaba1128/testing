@@ -46,7 +46,7 @@
 
             <el-col :span="8">
                 <div class="grid-content">
-                    {{this.$store.state.user.authorities}}
+                    
                 </div>
             </el-col>
         </el-row>
