@@ -16,6 +16,7 @@ export const constantRouterMap = [
         component: ssoIndex,
         meta: { title: 'index' }
     },
+    
     {
         path: '/login',
         component: ssoLogin,
